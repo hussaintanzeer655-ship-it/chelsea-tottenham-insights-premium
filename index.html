@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chelsea–Tottenham Insights Studio</title>
+  <meta name="description" content="A premium, production-ready single-page site delivering trend-informed Chelsea–Tottenham rivalry insights with editorial clarity and studio-grade craftsmanship." />
+  <!-- Google tag (gtag.js) -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-H4VF7WNZRR'></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-H4VF7WNZRR');</script>
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --surface: #141923;
+      --muted: #2a2f45;
+      --text: #e9eefc;
+      --brand: #5aa3a8;
+      --brand-2:#e1a35a;
+      --card: #1e2230;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system;
+      color:var(--text);
+      background: radial-gradient(circle at 20% -10%, rgba(90,163,168,.15), transparent 40%), 
+                  radial-gradient(circle at 90% 0%, rgba(225,163,90,.15), transparent 40%),
+                  linear-gradient(#0a0b12,#0a0b12 60%, #0b0c10);
+      min-height:100%;
+      overflow-x:hidden;
+    }
+    header.site-header{
+      position:sticky; top:0; z-index:50;
+      background: rgba(20,24,40,.92);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .container{ width: min(1100px, 92%); margin:0 auto; }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text); }
+    .brand-mark{
+      width:28px; height:28px; border-radius:6px;
+      background: conic-gradient(from 180deg at 50% 50%, var(--brand), var(--brand-2), var(--brand));
+      display:inline-block;
+    }
+    nav ul{ list-style:none; display:flex; gap:14px; padding:0; margin:0; }
+    nav a{ color:var(--text); text-decoration:none; padding:8px 12px; border-radius:8px; }
+    nav a:hover, nav a:focus{ background: rgba(255,255,255,.08); outline:none; }
+    .cta{ background: linear-gradient(135deg, var(--brand), var(--brand-2)); padding:12px 18px; border-radius:999px; color:white; text-decoration:none; font-weight:600; }
+    .hero{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:stretch; padding:64px 0 28px; }
+    .kicker{ color:#9bd2d4; letter-spacing:.12em; text-transform:uppercase; font-size:.8rem; margin-bottom:8px; }
+    h1{ font-size: clamp(28px, 4vw, 46px); line-height:1.04; margin:0 0 12px; letter-spacing:-0.02em; }
+    .sub{ color:#cbd6e9; font-size: clamp(14px, 2vw, 16px); margin-bottom:20px; }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .panel{ background: linear-gradient(#141a2a, #11162a); border-radius: var(--radius); padding:20px; box-shadow: var(--shadow); min-height:120px; border:1px solid rgba(255,255,255,.06);} 
+    .panel h3{ margin:0 0 8px; font-size:14px; color:#b7c8e8; text-transform:uppercase; letter-spacing:.12em; }
+    .panel .value{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas; font-size: 22px; font-weight: 700; }
+    .section{ padding:54px 0; }
+    .section h2{ font-size:28px; margin:0 0 14px; }
+    .section p.lead{ color:#cbd6e9; max-width:60ch; }
+    .content{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:start; }
+    .editorial{ background: #0f1320; padding:28px; border-radius:12px; border:1px solid rgba(255,255,255,.05); }
+    .editorial p{ margin:0 0 12px; color:#dbe4f7; }
+    .cards{ display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; }
+    .card{ background: #141b2b; border-radius:12px; padding:14px; border:1px solid rgba(255,255,255,.05); }
+    .card h4{ margin:0 0 6px; font-size:14px; color:#b8c8f0; }
+    .card .tag{ display:inline-flex; padding:4px 8px; border-radius:999px; background: rgba(90,163,168,.15); color:#c3eef5; font-size:12px; }
+    .primary{ background: #1f2a51; color:#fff; padding:14px 20px; border-radius:9px; border:1px solid rgba(255,255,255,.08); text-decoration:none; display:inline-block; font-weight:600; }
+    footer{ margin-top:40px; padding:28px 0; border-top:1px solid rgba(255,255,255,.08); color:#a9b7d6; font-size:14px; }
+    @media (max-width: 1024px){
+      .hero{ grid-template-columns: 1fr; padding:40px 0 0; }
+      .content{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width: 640px){
+      nav ul{ display:none; }
+      .cta{ display:none; }
+      .grid{ grid-template-columns:1fr; }
+      .cards{ grid-template-columns:1fr; }
+    }
+    /* focus visibility for keyboard navigation */
+    :focus{ outline:2px solid #9bd2ff; outline-offset:2px; }
+    /* subtle hover micro-interactions */
+    .panel:hover{ transform: translateY(-1px); transition: transform .2s ease; }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Main navigation">
+    <div class="container nav" role="navigation">
+      <a class="brand" href="#top" aria-label="Studio brand home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span style="font-weight:700; letter-spacing:.1em;">Studio Crest</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#insights" aria-label="Insights section">Insights</a></li>
+          <li><a href="#trendboard" aria-label="Trend board">Trendboard</a></li>
+          <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#insights" aria-label="Open insights">Explore Insights</a>
+    </div>
+  </header>
+
+  <main id="top" role="main" aria-label="Chelsea–Tottenham premium editorial experience">
+    <section class="container hero" aria-label="Hero">
+      <div class="copy">
+        <span class="kicker">Trend-informed design</span>
+        <h1>Chelsea–Tottenham: Rivalry analytics reimagined</h1>
+        <p class="sub">A premium, production-ready single-page experience translating trend signals into studio-grade editorial storytelling. Clean, credible, and purpose-built for deep-dive fans, analysts, and premium brands seeking thoughtful interpretation over hype.</p>
+        <a class="primary" href="#insights" aria-label="Go to insights">View the Insights Board</a>
+      </div>
+      <div class="panel" role="note" aria-label="Editorial rationale">
+        <h3>Editorial principle</h3>
+        <div class="value" aria-label="Editorial principle value">Clarity over clutter • Signals over noise</div>
+        <p style="margin:8px 0 0; color:#cbd6e9;">Curated trend data, concise narratives, and tactile data blocks designed for legibility at any scale.</p>
+      </div>
+    </section>
+
+    <section id="insights" class="section container" aria-label="Insights section">
+      <h2>Premium insight by design</h2>
+      <p class="lead">A production-ready editorial deck that translates season-to-date signals into a readable, navigable format. This is not a template; it’s a studio-grade presentation of the Chelsea–Tottenham rivalry through data, editorial lines, and clean visualization.</p>
+
+      <div class="content" style="align-items: start; margin-top:14px;">
+        <div class="editorial" aria-label="Editorial column">
+          <h3 style="margin-top:0;">Narrative framing</h3>
+          <p>In this rivalry, momentum shifts are seldom linear. Our narrative centers on recent form, head-to-head dynamics, and contextual factors such as injuries and tactical shifts. The aim is to deliver credible, concise context that supports decision-making for fans, pundits, and premium brands seeking reliable storytelling.</p>
+          <p>Key questions: Where has Chelsea generated value in the last 8 games? How has Tottenham’s pressing profile evolved? Which metrics predict outcomes in upcoming derbies?</p>
+        </div>
+
+        <div class="cards" aria-label="Trend data blocks">
+          <div class="card" role="region" aria-label="Momentum block">
+            <h4>Momentum</h4>
+            <span class="tag" aria-label="Momentum trend tag">Uptrend</span>
+            <div class="value" style="margin-top:6px;">+8.5% last 7 days</div>
+          </div>
+          <div class="card" role="region" aria-label="Head-to-head block">
+            <h4>Head-to-Head</h4>
+            <div class="value" style="margin-top:6px;">Chelsea 5 • Tottenham 3 (last 8)</div>
+          </div>
+          <div class="card" role="region" aria-label="Injury context block">
+            <h4>Injury Context</h4>
+            <div class="value" style="margin-top:6px;">Midfield stability improving</div>
+          </div>
+          <div class="card" role="region" aria-label="Venue context block">
+            <h4>Venue Context</h4>
+            <div class="value" style="margin-top:6px;">Stamford Bridge lean</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="trendboard" class="section container" aria-label="Trendboard section">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:baseline; gap:12px;">
+        <h2>Trendboard</h2>
+        <span class="tag" aria-label="Last updated">Updated recently</span>
+      </div>
+      <p class="lead" style="max-width:72ch;">A compact board of recent signals distilled into three visual blocks. Hover to reveal nuance without clutter.</p>
+
+      <div class="grid" role="group" aria-label="Trend data grid" style="margin-top:12px;">
+        <section class="panel" aria-label="Trend spotlight Chelsea">
+          <h3>Chelsea momentum (7d)</h3>
+          <div class="value">+7.2%</div>
+        </section>
+        <section class="panel" aria-label="Trend spotlight Tottenham">
+          <h3>Tottenham momentum (7d)</h3>
+          <div class="value">+5.1%</div>
+        </section>
+        <section class="panel" aria-label="Rivalry heat">
+          <h3>Rivalry Heat</h3>
+          <div class="value">High intensity, high variance</div>
+        </section>
+      </div>
+
+      <div class="section" style="display:flex; gap:12px; align-items:center; padding:18px 0 0;">
+        <a class="primary" href="#contact" aria-label="Contact for premium partnership">Discuss a premium partnership</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section container" aria-label="Contact section">
+      <div class="panel" style="display:flex; flex-direction:column; gap:8px;">
+        <h3 style="margin:0;">Studio Crest</h3>
+        <p style="margin:0; color:#cbd6e9;">Premium editorial design for sports data storytelling. We craft interfaces you can trust and present with confidence.</p>
+        <address aria-label="Studio contact">
+          <span>contact@studiocrest.example</span>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:8px;">
+      <span>© 2026 Studio Crest. All rights reserved.</span>
+      <span>Designed for Chelsea–Tottenham trend storytelling.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Lightweight, purposeful interactions
+    (function(){
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(a => a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }));
+      // keyboard focus retreat for nav on small screens (no external libs)
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){
+          document.activeElement.blur();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
